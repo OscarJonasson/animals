@@ -1,0 +1,50 @@
+.card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: column nowrap;
+  height: 260px;
+  width: 200px;
+  /* background-color: rgba(44, 44, 44, 0.205); */
+  background-color: rgba(255, 255, 255, 0.144);
+  margin: 2rem;
+  box-shadow: 0px 0px 20px -9px whitesmoke, 0 0 3px black inset;
+  border-radius: 3px;
+  border: 1px black outset;
+  transition: 300ms linear;
+}
+
+.card__img {
+  object-fit: cover;
+  object-position: top;
+  height: 60%;
+  width: 100%;
+  border-bottom: 1px solid black;
+  box-shadow: 0px 7px 13px -9px black;
+  border-radius: 3px;
+  transition: 200ms;
+}
+
+.card__img:hover {
+  filter: saturate(1.2);
+}
+
+.card__title {
+  align-self: flex-start;
+  font-size: 2rem;
+  padding-left: 1rem;
+  text-transform: uppercase;
+  text-shadow: 0px 3px 2px rgb(14, 9, 9);
+  color: rgb(121, 204, 132);
+}
+
+.card__likes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2rem;
+  height: inherit;
+  width: inherit;
+  text-shadow: 0px 3px 2px rgb(14, 9, 9);
+  color: rgb(121, 204, 132);
+}
