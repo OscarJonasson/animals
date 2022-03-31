@@ -13,6 +13,10 @@
   border: 1px black outset;
   transition: 300ms linear;
 }
+.card:hover > .card__title {
+  text-shadow: 0px 3px 2px rgb(14, 9, 9);
+  animation: sparkle 3s infinite alternate linear;
+}
 
 .card__img {
   object-fit: cover;
@@ -26,7 +30,7 @@
 }
 
 .card__img:hover {
-  filter: saturate(1.2);
+  filter: saturate(1.5);
 }
 
 .card__title {
@@ -36,6 +40,7 @@
   text-transform: uppercase;
   text-shadow: 0px 3px 2px rgb(14, 9, 9);
   color: rgb(121, 204, 132);
+  transition: 400ms;
 }
 
 .card__likes {
@@ -47,4 +52,22 @@
   width: inherit;
   text-shadow: 0px 3px 2px rgb(14, 9, 9);
   color: rgb(121, 204, 132);
+}
+
+@keyframes sparkle {
+  from {
+    text-shadow: 0px 3px 2px rgb(250, 24, 24);
+  }
+  30% {
+    text-shadow: 1px 4px 3px rgb(216, 26, 216);
+  }
+  60% {
+    text-shadow: 2px 4px 4px rgb(210, 212, 43);
+  }
+  90% {
+    text-shadow: 1px 4px 3px rgb(37, 161, 192);
+  }
+  to {
+    text-shadow: 0px 3px 2px rgb(150, 173, 74);
+  }
 }
