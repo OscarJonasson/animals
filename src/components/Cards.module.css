@@ -1,27 +1,50 @@
 .card {
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-flow: column nowrap;
-  height: 260px;
+  height: 280px;
   width: 200px;
   /* background-color: rgba(44, 44, 44, 0.205); */
   background-color: rgba(255, 255, 255, 0.144);
   margin: 2rem;
-  box-shadow: 0px 0px 20px -9px whitesmoke, 0 0 3px black inset;
+  box-shadow: 0px 0px 30px -3px rgba(245, 245, 245, 0.32), 0 0 3px black inset;
   border-radius: 3px;
   border: 1px black outset;
-  transition: 300ms linear;
+  transition: 100ms linear;
 }
+
+.card:hover {
+  box-shadow: 0px 0px 37px -3px rgba(245, 245, 245, 0.317), 0 0 3px black inset;
+}
+
 .card:hover > .card__title {
-  text-shadow: 0px 3px 2px rgb(14, 9, 9);
   animation: sparkle 3s infinite alternate linear;
 }
+/* Cant get the SVG to show up if its not a backgroundimage */
+/* .card__vine {
+  position: absolute;
+  bottom: 120px;
+  left: 77px;
+  border: solid green 3px;
+  object-fit: cover;
+} */
+
+/* .card__vine::after {
+  content: '';
+  bottom: 0;
+  left: -210px;
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  transition: 1s;
+} */
 
 .card__img {
   object-fit: cover;
   object-position: top;
-  height: 60%;
+  height: 900px;
   width: 100%;
   border-bottom: 1px solid black;
   box-shadow: 0px 7px 13px -9px black;

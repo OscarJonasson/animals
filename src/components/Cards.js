@@ -9,11 +9,11 @@ const Cards = props => {
         className={classes.card__img}
         src={`https://source.unsplash.com/1600x900/?${props.name}`}
         alt={`${props.name}`}
-      ></img>
+      />
       <h2 className={classes.card__title}>{props.name}</h2>
       <div className={classes.card__likes}>
         <p>❤️ {props.likes}</p>
-        <Button text="Add Like" />
+        <Button text="Add Like" click={props.add} />
       </div>
     </div>
   );
