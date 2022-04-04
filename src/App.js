@@ -5,14 +5,15 @@ import { animals } from './components/animals';
 
 class App extends Component {
   state = {
-    // Why this works with animals: and without?
-    animals,
+    animals: animals,
+    isloading: '',
+    search: '',
   };
 
-  addLikeHandler = name => {
-    this.setState(state => {
-      const updateAnimalsList = state.animals.map(animal => {
-        if (animal.name === name) {
+  addLikeHandler = whatever => {
+    this.setState(prevState => {
+      const updateAnimalsList = prevState.animals.map(animal => {
+        if (animal.name === whatever) {
           return { ...animal, likes: animal.likes + 1 };
         } else {
           return animal;
@@ -24,15 +25,40 @@ class App extends Component {
     });
   };
 
+  removeHandler = name => {
+    const wantedAnimals = this.state.animals.filter(
+      animal => animal.name !== name
+    );
+    this.setState({
+      animals: wantedAnimals,
+    });
+  };
+
+  // Safer way of doing it?
+  // removeHandler = name => {
+  //   this.setState(state => {
+  //     const wantedAnimals = state.animals.filter(animal => {
+  //       return animal.name !== name;
+  //     });
+  //     return {
+  //       animals: wantedAnimals,
+  //     };
+  //   });
+  // };
+
   render() {
     const animalsList = this.state.animals.map(animal => (
+      // Key should be unique (animals has no duplicates)
       <Cards
         key={animal.name}
         name={animal.name}
         likes={animal.likes}
         add={() => this.addLikeHandler(animal.name)}
+        // remove={() => this.removeHandler(animal.name)} different way below
+        remove={this.removeHandler.bind(this, animal.name)}
       />
     ));
+
     return (
       <div className="App">
         <div className="cards">{animalsList}</div>

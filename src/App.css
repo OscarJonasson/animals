@@ -4,3 +4,8 @@
   align-items: center;
   flex-flow: row wrap;
 }
+
+.heading {
+  color: antiquewhite;
+  padding-left: 2rem;
+}

@@ -1,11 +1,8 @@
 # ANIMALS
 
-- app that lists set names animals collects likes
+App that lists all the animals from animalsdb and gives them random images from unsplash using animal name.
 
-- Animal card and button separated
-- random images from unsplash
+- Animal card and button must be separated components
+- Close button that hides the selected card
 
-<!--This is how u search random pic with keyword src={`https://source.unsplash.com/1600x900/?${props.title}`} -->
-
-use anonymous function to get info which like is clicked
-on card click button -> sends name of animal -> function/method onclick takes name --> searches array if there is that object --> replaces animal object adding like
+Images are from Unsplash https://unsplash.com/

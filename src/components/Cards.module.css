@@ -22,6 +22,7 @@
 .card:hover > .card__title {
   animation: sparkle 3s infinite alternate linear;
 }
+
 /* Cant get the SVG to show up if its not a backgroundimage */
 /* .card__vine {
   position: absolute;
@@ -48,7 +49,7 @@
   width: 100%;
   border-bottom: 1px solid black;
   box-shadow: 0px 7px 13px -9px black;
-  border-radius: 3px;
+  border-radius: 2px;
   transition: 200ms;
 }
 
@@ -58,7 +59,7 @@
 
 .card__title {
   align-self: flex-start;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding-left: 1rem;
   text-transform: uppercase;
   text-shadow: 0px 3px 2px rgb(14, 9, 9);
@@ -75,6 +76,23 @@
   width: inherit;
   text-shadow: 0px 3px 2px rgb(14, 9, 9);
   color: rgb(121, 204, 132);
+}
+
+.card__close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right: 0;
+  cursor: pointer;
+  font-size: 1.5rem;
+  filter: brightness(0.5);
+}
+
+.card__close:hover {
+  filter: brightness(1);
 }
 
 @keyframes sparkle {
