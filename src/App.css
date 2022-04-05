@@ -9,3 +9,14 @@
   color: antiquewhite;
   padding-left: 2rem;
 }
+
+.App {
+  display: block;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+h3 {
+  color: aliceblue;
+  font-size: 1rem;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Cards from './components/Cards';
 import { animals } from './components/animals';
+import Search from './components/Search';
 
 class App extends Component {
   state = {
@@ -46,10 +47,23 @@ class App extends Component {
   //   });
   // };
 
+  searchHandler = e => {
+    this.setState({
+      search: e.target.value.toLowerCase(),
+    });
+  };
+
   render() {
-    const animalsList = this.state.animals.map(animal => (
+    const animalFilter = this.state.animals.filter(animal => {
+      return animal.name
+        .toLowerCase()
+        .includes(this.state.search.toLowerCase());
+    });
+
+    const animalsList = animalFilter.map(animal => (
       // Key should be unique (animals has no duplicates)
       <Cards
+        // search={this.state.search}
         key={animal.name}
         name={animal.name}
         likes={animal.likes}
@@ -61,6 +75,11 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1 className="heading">
+          Animals in the world {this.state.animals.length}
+        </h1>
+        <input type="text" onChange={this.searchHandler} />
+        <h3>{this.state.search}</h3>
         <div className="cards">{animalsList}</div>
       </div>
     );
