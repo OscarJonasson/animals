@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage("build"){
             steps{
-                sh 'npm run moro'
                 echo 'building app...'
 
             }
