@@ -16,7 +16,7 @@ pipeline {
         }
         stage("deliver"){
             steps{
-                echo 'delivering app...'
+                echo 'delivering app... and testing trigger'
             }
 
         }
